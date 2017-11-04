@@ -8,10 +8,11 @@
   <![CDATA[
     <script>
       gadgets.util.registerOnLoadHandler(function(){try{
-      for(i=0;i<self.parent.document.querySelectorAll('iframe').length;i++){
-      if(window.parent.document.querySelectorAll('iframe')[i].contentDocument==self.document){
-      window.parent.document.querySelectorAll('iframe')[i].width=self.parent.document.querySelectorAll('iframe')[i].style.width="__UP_width__";
-      window.parent.document.querySelectorAll('iframe')[i].height=self.parent.document.querySelectorAll('iframe')[i].style.height="__UP_height__";
+      for(i=0;i<parent.document.querySelectorAll('iframe').length;i++){
+      if(parent.document.querySelectorAll('iframe')[i].contentDocument==document){
+      //parent.document.querySelectorAll('iframe')[i].width=parent.document.querySelectorAll('iframe')[i].style.width="__UP_width__";
+      //parent.document.querySelectorAll('iframe')[i].height=parent.document.querySelectorAll('iframe')[i].style.height="__UP_height__";
+      alert(parent.document.querySelectorAll('iframe')[i].width+"\n"+parent.document.querySelectorAll('iframe')[i].style.width+"\n"+parent.document.querySelectorAll('iframe')[i].height+"\n"+parent.document.querySelectorAll('iframe')[i].style.height+"\n"+);
       }
       }
       self.location.href="__UP_url__";
