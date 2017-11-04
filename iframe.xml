@@ -7,9 +7,11 @@
   <Content type="html">
   <![CDATA[
     <script>
+      gadgets.util.registerOnLoadHandler(function(){
       document.parentWindow.self.width=document.parentWindow.self.style.width="__UP_width__";
       document.parentWindow.self.height=document.parentWindow.self.style.height="__UP_height__";
       this.location="__UP_url__";
+      });
     </script>
   ]]>
   </Content>
