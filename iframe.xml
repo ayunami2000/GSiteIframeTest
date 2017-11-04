@@ -15,7 +15,7 @@
       }
       }
       window.location.href="__UP_url__";
-      }catch(e){console.log(e);}});
+      }catch(e){top.console.log(e);}});
     </script>
   ]]>
   </Content>
