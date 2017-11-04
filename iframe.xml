@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Preferences for __UP_url__" height="250" />
+  <ModulePrefs title="Preferences for iframe" height="250" />
   <UserPref name="url" display_name="URL" required="true" />
   <UserPref name="width" display_name="iframe width" default_value="100%"/>
   <UserPref name="height" display_name="iframe height" default_value="50%"/>
-  <!--<UserPref name="color" display_name="Background Color (will display when height is set too large)" default_value="#FFFFFF"/>-->
   <Content type="html">
   <![CDATA[
     <script>
-      document.parentWindow.self.width=(new gadgets.Prefs()).getString("width");
-      document.parentWindow.self.height=(new gadgets.Prefs()).getString("height");
+      document.parentWindow.self.width=__UP_width__;
+      document.parentWindow.self.style.width=__UP_width__;
+      document.parentWindow.self.height=__UP_height__;
+      document.parentWindow.self.style.height=__UP_height__;
+      this.location=__UP_url__;
     </script>
-    <iframe onload="this.src=(new gadgets.Prefs()).getString('url');" style="position:absolute;top:0;left:0;right:0;bottom:0;border:0;padding:0;margin:0;width:100%;height:100%;" src="">Sorry, but iframes aren't supported in your browser.</iframe>
   ]]>
   </Content>
 </Module>
