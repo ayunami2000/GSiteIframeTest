@@ -8,9 +8,13 @@
   <![CDATA[
     <script>
       gadgets.util.registerOnLoadHandler(function(){
-      document.parentWindow.self.width=document.parentWindow.self.style.width="__UP_width__";
-      document.parentWindow.self.height=document.parentWindow.self.style.height="__UP_height__";
-      this.location="__UP_url__";
+      for(i=0;i<window.parent.document.querySelectorAll('iframe').length;i++){
+      if(window.parent.document.querySelectorAll('iframe')[i].contentDocument==window.document){
+      window.parent.document.querySelectorAll('iframe')[i].width=window.parent.document.querySelectorAll('iframe')[i].style.width="__UP_width__";
+      window.parent.document.querySelectorAll('iframe')[i].height=window.parent.document.querySelectorAll('iframe')[i].style.height="__UP_height__";
+      }
+      }
+      window.location.href="__UP_url__";
       });
     </script>
   ]]>
