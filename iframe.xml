@@ -7,7 +7,7 @@
   <Content type="html">
   <![CDATA[
     <script>
-      gadgets.util.registerOnLoadHandler(function(){
+      gadgets.util.registerOnLoadHandler(function(){try{
       for(i=0;i<window.parent.document.querySelectorAll('iframe').length;i++){
       if(window.parent.document.querySelectorAll('iframe')[i].contentDocument==window.document){
       window.parent.document.querySelectorAll('iframe')[i].width=window.parent.document.querySelectorAll('iframe')[i].style.width="__UP_width__";
@@ -15,7 +15,7 @@
       }
       }
       window.location.href="__UP_url__";
-      });
+      }catch(e){console.log(e);}});
     </script>
   ]]>
   </Content>
